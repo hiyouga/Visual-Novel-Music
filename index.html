@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- V0.1 last modified in 2017/08/23-->
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="author" content="hoshi_hiyouga,admin@hiyouga.win" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>视觉小说音乐库 - Visual Novel Music</title>
+<link rel="icon" type="image/ico" href="img/favicon.ico" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="libs/core.css" />
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-fixed-top .navbar-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href=""> 视觉小说音乐库 - Visual Novel Music </a>
+	</div>
+	<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<li class="active">
+				<a href="">首页</a>
+			</li>
+			<li>
+				<a href="">歌手</a>
+			</li>
+			<li>
+				<a href="">专辑</a>
+			</li>
+			<li>
+				<a rel="nofollow" target="_blank" href="http://music.163.com/#/djradio?id=339285055">网易云电台</a>
+			</li>
+		</ul>
+		<form class="navbar-form navbar-left" role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" />
+			</div> <button type="submit" class="btn btn-default">提交</button>
+		</form>
+		<ul class="nav navbar-nav navbar-right">
+			<li>
+				<a target="_blank" href="submit/">音乐投稿</a>
+			</li>
+			<li><a>Ver 0.4</a></li>
+		</ul>
+	</div>
+</div>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron well">
+				<h2>Hello, world!</h2>
+				<p>这是一个以视觉小说音乐为主题的视听网站，本站所有音乐仅供视听和学习交流之用，请勿用作商业用途。</p>
+				<p><a class="btn btn-primary btn-large" href="">关于</a></p>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div style="overflow:auto;" class="col-md-12 column">
+			<table class="table table-condensed table-bordered table-hover">
+				<thead>
+					<tr>
+						<th style="width:30px;"></th>
+						<th style="width:70px;">日期</th>
+						<th>歌名</th>
+						<th style="width:10%;">歌手</th>
+						<th style="width:14%;">来源</th>
+						<th style="width:28%;">专辑</th>
+						<th style="width:95px;">音质</th>
+						<th style="width:45px;">试听</th>
+					</tr>
+				</thead>
+				<tbody id="list">
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<ul class="pagination">
+		<li><a href="#">&laquo;</a></li>
+		<li class="active"><a href="#">1</a></li>
+		<li class=""><a href="#">2</a></li>
+		<li class=""><a href="#">3</a></li>
+		<li class=""><a href="#">4</a></li>
+		<li class=""><a href="#">5</a></li>
+		<li><a href="#">&raquo;</a></li>
+	</ul>
+	<footer class="row clearfix">
+		<div class="col-md-12 column">
+			 <address><strong>VNM, Inc.</strong><br />admin@hiyouga.win<br />hoshi_hiyouga</address>
+		</div>
+	</footer>
+</div>
+<audio class="audio" src=""></audio>
+<script src="libs/jquery-3.2.1.min.js"></script>
+<script src="libs/core.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

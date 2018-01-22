@@ -1,0 +1,65 @@
+html,body{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+}
+body{
+	padding-top:60px;
+}
+.navbar{
+	width:100%;
+	position:fixed;
+	top:0;
+}
+.navbar-brand{
+	white-space:nowrap;
+	word-wrap:normal;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.container{
+	width:90%;
+	height:100%;
+}
+table{
+	table-layout:fixed;
+}
+th{
+	text-align:center;
+}
+td{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+@media screen and (max-width:800px){
+	th:nth-child(2){display:none;}
+	td:nth-child(2){display:none;}
+	th:nth-child(4){display:none;}
+	td:nth-child(4){display:none;}
+	th:nth-child(5){display:none;}
+	td:nth-child(5){display:none;}
+	th:nth-child(6){display:none;}
+	td:nth-child(6){display:none;}
+	th:nth-child(7){display:none;}
+	td:nth-child(7){display:none;}
+} 
+@media screen and (max-width:768px){
+	.navbar-brand{max-width:calc(100% - 70px);}
+}
+.musicbtn{
+	text-align:center;
+	padding:0 10px 0 10px; 
+}
+footer{
+	margin-bottom:0%;
+}
+/*scroll*/
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-button:vertical{display:none}
+::-webkit-scrollbar-track:vertical{background-color:transparent;}
+::-webkit-scrollbar-track-piece{background-color:transparent;}
+::-webkit-scrollbar-thumb:vertical{background-color:#3792ef;border-radius:6px}
+::-webkit-scrollbar-thumb:vertical:hover,
+::-webkit-scrollbar-thumb:vertical:active {background-color:rgba(251,187,232,1)}/*#2e86ef*/

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- V1.0 last modified in 2017/08/23 -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>投稿</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="libs/style.css">
+<link rel="icon" type="image/ico" href="../img/favicon.ico" />
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-fixed-top .navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="">VNM歌曲投稿系统</a>
+        </div>
+		<div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a target="_blank" href="../">返回主页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1>VNM歌曲投稿系统</h1>
+    <blockquote>
+	内测中...
+    </blockquote>
+    <form role="form" method="post" action="submit.php">
+		<div class="form-group">
+			<label>上传方式</label>
+			<select id="upmethod" class="form-control" name="upmethod">
+				<option value="0">请选择</option>
+				<option value="1">本地上传</option>
+				<option value="2">外链添加</option>
+			</select>
+		</div>
+		<div id="local">
+			<div class="form-group">
+				<label>上传歌曲文件(请在新页面完成上传)</label>：<a target="_blank" href="../upload/"><button type="button" class="btn btn-primary">打开上传页面</button></a>
+			</div>
+			<div class="form-group">
+				<label style="display:block;">文件名(上传页面所显示的音乐文件名称)</label>
+				<input type="text" style="display:inline-block;width:75%;" class="form-control" name="filename" />
+				.
+				<select style="display:inline-block;width:20%;" class="form-control" name="format">
+					<option value="mp3">mp3</option>
+					<option value="m4a">m4a</option>
+					<option value="ogg">ogg</option>
+					<option value="ogg">opus</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>音质</label>
+				<select class="form-control" name="quality">
+					<option value="320">320kbps</option>
+					<option value="256">256kbps</option>
+					<option value="224">224kbps</option>
+					<option value="192">192kbps</option>
+					<option value="160">160kbps</option>
+					<option value="128">128kbps</option>
+					<option value="96">96kbps</option>
+					<option value="64">64kbps</option>	
+				</select>
+			</div>
+		</div>
+		<div id="outerlink">
+			<div class="form-group">
+				<label style="display:block;">歌曲页面链接</label>
+				<input type="text" id="outerurl" class="form-control" name="outerurl" />
+				<p class="help-block">
+				目前支持的音乐网站有：<a rel="nofollow" target="_blank" href="http://music.163.com/">网易云音乐</a> / <a rel="nofollow" target="_blank" href="http://www.xiami.com/">虾米音乐</a><br />
+				网易云链接示例：http://music.163.com/#/song?id=498286385<br />
+				虾米音乐链接示例：http://www.xiami.com/song/1795705869</p>
+			</div>
+			<div class="form-group">
+				<label>自动填写歌曲信息</label>：<button type="button" onClick="auto();" class="btn btn-primary">点击获取信息</button>
+				<p class="help-block" id="warning" style="color:#f00;">请注意核对信息！</p>
+			</div>
+		</div>
+		<hr />
+		<div class="form-group">
+			<label>进行操作</label>
+			<select id="addmethod" class="form-control" name="addmethod">
+				<option value="0">请选择</option>
+				<option value="1">添加歌曲</option>
+				<option value="2">修改歌曲</option>
+			</select>
+		</div>
+		<div id="add">
+			<div class="form-group">
+				<label>曲名</label><input type="text" id="title" class="form-control" name="title" />
+			</div>
+			<div class="form-group">
+				<label>歌手</label><input type="text" id="vocalist" class="form-control" name="vocalist" />
+				<p class="help-block">复数歌手请用英文逗号“,”分开</p>
+			</div>
+			<div class="form-group">
+				<label>专辑</label><input type="text" id="album" class="form-control" name="album" />
+				<p class="help-block">未知请填写“-”</p>
+			</div>
+			<div class="form-group">
+				<label>出处(游戏名称)</label><input type="text" class="form-control" name="game" />
+			</div>
+			<div class="form-group">
+				<label>游戏发售日期(YYMMDD)</label><input type="text" class="form-control" name="gamedate" />
+				<p class="help-block">例：170728</p>
+			</div>
+		</div>
+		<div id="modify">
+			<div class="form-group">
+				<label>mid</label><input type="text" class="form-control" name="mid" />
+				<p class="help-block">可在主页查询歌曲mid</p>
+			</div>
+		</div>
+		<hr />
+		<div class="form-group">
+			<label>SUBMIT KEY(请向网站管理员索取)</label><input type="password" class="form-control" name="key" />
+		</div>
+		<button type="submit" class="btn btn-default">提交</button>
+	</form>
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">提示</h3>
+        </div>
+        <div class="panel-body">
+            <ul>
+                <li>上传文件大小上限为<strong>20MB</strong>.</li>
+                <li>已存在的歌曲可以省略<strong>歌手、专辑、出处、发售日期</strong>项目.</li>
+			</ul>
+        </div>
+    </div>
+</div>
+<script src="../libs/jquery-3.2.1.min.js"></script>
+<script src="libs/auto.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
